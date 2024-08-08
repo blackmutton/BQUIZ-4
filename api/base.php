@@ -4,7 +4,7 @@ date_default_timezone_set("Asia/Taipei");
 class DB
 {
     protected $table;
-    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=dbno3";
+    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=dbno4";
     protected $pdo;
 
     public function __construct($table)
@@ -122,7 +122,7 @@ class DB
 
 function q($sql)
 {
-    $dsn = "mysql:host=localhost;charset=utf8;dbname=dbno3";
+    $dsn = "mysql:host=localhost;charset=utf8;dbname=dbno4";
     $pdo = new PDO($dsn, 'root', '');
     // echo $sql;
     return $pdo->query($sql)->fetchAll();
@@ -138,3 +138,5 @@ function dd($array)
     print_r($array);
     echo "</pre>";
 }
+
+$Mem=new DB('members');

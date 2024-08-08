@@ -1,6 +1,6 @@
 <h2>第一次購物</h2>
 <a href="Javascript:location.href='?do=reg'">
-    <img src="./images/0413.jpg" alt="">
+    <img src="./icon/0413.jpg" alt="">
 </a>
 
 <h2>會員登入</h2>
