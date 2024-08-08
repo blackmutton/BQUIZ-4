@@ -139,5 +139,6 @@ function dd($array)
     echo "</pre>";
 }
 
-$Mem=new DB('members');
-$Admin=new DB('admin');
+$Mem = new DB('members');
+$Admin = new DB('admin');
+$Bottom = new DB('bottom');
