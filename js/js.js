@@ -1,31 +1,11 @@
 // JavaScript Document
-$(document).ready(function(e) {
-    $(".mainmu").mouseover(
-		function()
-		{
-			$(this).children(".mw").stop().show()
-		}
-	)
-	$(".mainmu").mouseout(
-		function ()
-		{
-			$(this).children(".mw").hide()
-		}
-	)
-});
-function lo(x)
+function lof(x)
 {
-	location.replace(x)
+	location.href=x
 }
-function op(x,y,url)
-{
-	$(x).fadeIn()
-	if(y)
-	$(y).fadeIn()
-	if(y&&url)
-	$(y).load(url)
-}
-function cl(x)
-{
-	$(x).fadeOut();
+
+function del(table,id){
+	$.post("./api/del.php",{table,id},function(){
+		location.reload()
+	}	)
 }

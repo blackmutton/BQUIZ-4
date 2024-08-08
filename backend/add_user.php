@@ -37,7 +37,7 @@
         </tr>
     </table>
     <div class="ct">
-        <button type="submit" value="修改"></button>
+        <button type="submit" value="新增"></button>
         <button type="reset" value="重置"></button>
     </div>
 </form>
