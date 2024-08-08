@@ -19,7 +19,7 @@
         <td class="pp">
             <?php
             $a = rand(10, 99);
-            $b = rand(0, 99);
+            $b = rand(10, 99);
             $_SESSION['answer'] = $a + $b;
             echo $a . " + " . $b . " = ";
             ?>
@@ -36,6 +36,7 @@
         }, (chk) => {
             if (parseInt(chk)) {
                 $.get("./api/chk_pw.php", {
+                    table:'Mem',
                     acc: $("#acc").val(),
                     pw: $("#pw").val()
                 }, (chk) => {
