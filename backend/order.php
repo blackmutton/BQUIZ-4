@@ -14,7 +14,7 @@
         <td>操作</td>
     </tr>
     <?php
-    $rows = $Orders->all();
+    $rows = $Order->all();
     foreach ($rows as $row) {
     ?>
         <tr class="tt ct">

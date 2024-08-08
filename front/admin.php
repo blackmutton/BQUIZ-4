@@ -16,7 +16,7 @@
             <?php
             $a = rand(10, 99);
             $b = rand(10, 99);
-            $_SESSION['answer'] = $a + $b;
+            $_SESSION['ans'] = $a + $b;
             echo $a . " + " . $b . " = ";
             ?>
             <input type="text" name="ans" id="ans">
@@ -29,6 +29,7 @@
         $.get("./api/chk_ans.php", {
             ans: $("#ans").val()
         }, (chk) => {
+            console.log(chk)
             if (parseInt(chk)) {
                 $.get("./api/chk_pw.php", {
                     table: 'Admin',

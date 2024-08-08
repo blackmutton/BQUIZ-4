@@ -8,7 +8,7 @@
         </tr>
         <tr>
             <td class="tt ct">密碼</td>
-            <td class="pp"><input type="text" name="pw" id="pw"></td>
+            <td class="pp"><input type="password" name="pw" id="pw"></td>
         </tr>
         <tr>
             <td class="tt ct">權限</td>
@@ -37,7 +37,7 @@
         </tr>
     </table>
     <div class="ct">
-        <button type="submit" value="新增"></button>
-        <button type="reset" value="重置"></button>
+        <input type="submit" value="新增"></input>
+        <input type="reset" value="重置"></input>
     </div>
 </form>

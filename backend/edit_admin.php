@@ -13,7 +13,7 @@ $pr = unserialize($row['pr']);
         </tr>
         <tr>
             <td class="tt ct">密碼</td>
-            <td class="pp"><input type="text" name="pw" value="<?= $row['pw'] ?>"></td>
+            <td class="pp"><input type="password" name="pw" value="<?= $row['pw'] ?>"></td>
         </tr>
         <tr>
             <td class="tt ct">權限</td>
@@ -43,7 +43,7 @@ $pr = unserialize($row['pr']);
     </table>
     <div class="ct">
         <input type="hidden" name="id" value="<?= $row['id'] ?>">
-        <button type="submit" value="修改"></button>
-        <button type="reset" value="重置"></button>
+        <input type="submit" value="修改"></input>
+        <input type="reset" value="重置"></input>
     </div>
 </form>
