@@ -28,3 +28,48 @@
 </div>
 
 <h2 class="ct">商品管理</h2>
+
+<script>
+    getTypes();
+
+    function getTypes(type = 'big', id = 0) {
+        $.get("./api/get_types.php", {
+            type,
+            id
+        }, (types) => {
+            switch (type) {
+                case 'big':
+                    $("#bigSelect").html(types)
+                    break;
+                case 'mid':
+                    $("#midSelect").html(types)
+                    break;
+            }
+        })
+    }
+
+    function addType(type) {
+        let big, mid
+        switch (type) {
+            case "big":
+                big = $("#big").val()
+                $.post("api/add_type.php", {
+                    type,
+                    big
+                }, () => {
+                    location.reload()
+                })
+                break;
+
+            case 'mid':
+                mid = $("#mid").val()
+                $.post("api/add_type.php", {
+                    type,
+                    big
+                }, () => {
+                    location.reload()
+                })
+                break;
+        }
+    }
+</script>
