@@ -2,7 +2,7 @@
 $row = $Admin->find($_GET['id']);
 $pr = unserialize($row['pr']);
 ?>
-<!-- 從add_user.php複製 -->
+<!-- 從add_admin.php複製 -->
 <h2 class="ct">修改管理員權限</h2>
 <!-- table.all>tr*3>td.tt.ct+td.pp>input:text -->
 <form action="./api/save_admin.php" method="post">
