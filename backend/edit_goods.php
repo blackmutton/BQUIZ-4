@@ -45,8 +45,8 @@
 </div>
 
 <script>
-    getTypes()
-    getTypes('mid', 1)
+    //getTypes的第三個參數為陣列,分別是大分類和中分類的值
+    getTypes('big',0,[<?=$row['big']?>,<?=$row['mid']?>])
 
     $("#bigSelect").on("change", function() {
         getTypes('mid', $(this).val())
