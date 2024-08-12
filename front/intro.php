@@ -1,3 +1,7 @@
+<?php
+$row = $Goods->find($_GET['id']);
+
+?>
 <style>
     .item * {
         box-sizing: border-box;
@@ -34,11 +38,9 @@
         width: 100%;
     }
 </style>
-<?php
-$row = $Goods->find($_GET['id']);
-?>
 
-<h2 class="ct"><?= $row['name'] ?></h2>
+<h2 class="ct"><?= $row['name']; ?></h2>
+
 <div class="item">
     <div class="img pp">
         <img src="./images/<?= $row['img']; ?>" alt="">
@@ -53,7 +55,16 @@ $row = $Goods->find($_GET['id']);
     <div class="qt tt ct">
         購買數量:
         <input type="number" name="qt" id="qt" value='1'>
-        <img src="./icon/0402.jpg" alt="">
+        <a href="javascript:buy(<?= $row['id']; ?>)">
+            <img src="./icon/0402.jpg" alt="">
+        </a>
     </div>
 </div>
 <div class="ct"><button onclick="location.href='index.php'">返回</button></div>
+
+<script>
+    function buy(id) {
+        let qt = $('#qt').val();
+        location.href = `?do=buycart&id=${id}&qt=${qt}`;
+    }
+</script>
