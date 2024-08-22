@@ -26,18 +26,19 @@ function editType(id, dom) {
  * @param {int} id  type id
  * @param {array} selected  選單中是否有已被選擇的值
  */
-function getTypes(type = 'big', id = 0, selected = new Array) {
+function getTypes(type = 'big', id = 0, selected = new Array()) {
 	$.get("./api/get_types.php", {
 		type,
-		id
+		id,
 	}, (types) => {
 		//console.log(type,selected)
 		switch (type) {
 			case 'big':
 				$("#bigSelect").html(types)
+
 				//如果有選擇的值，則將選擇的值設定為選單的值
-				if (selected.length>0) {
-					$("#bigSelect").val(selectde[0])
+				if (selected.length > 0) {
+					$("#bigSelect").val(selected[0])
 
 					//如果大分類有選擇的值，則取得中分類被選擇的值
 					getTypes('mid', selected[0], [selected[1]])
@@ -69,12 +70,14 @@ function addType(type) {
 			break;
 
 		case 'mid':
-			mid = $("#mid").val()
-			$.post("api/add_type.php", {
+			big = $("#bigSelect").val();
+			mid = $("#mid").val();
+			$.post('api/add_type.php', {
 				type,
-				big
+				big,
+				mid
 			}, () => {
-				location.reload()
+				location.reload();
 			})
 			break;
 	}

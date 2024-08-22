@@ -21,27 +21,26 @@ include "./api/base.php";
                         <a href="?">
                                 <img src="./icon/0416.jpg" style="width:50%">
                         </a>
-                        <div style="padding:10px;display:inline-block">
+                        <div style=" padding:10px;display:inline-block">
                                 <a href="?">回首頁</a> |
                                 <a href="?do=news">最新消息</a> |
                                 <a href="?do=look">購物流程</a> |
                                 <a href="?do=buycart">購物車</a> |
                                 <?php
-                                if (isset($_SESSION[['Mem']])) {
-                                        echo "<a href='./api/logout.php?user=mem'>登出</a>|";
+                                if (isset($_SESSION['Mem'])) {
+                                        echo "<a href='./api/logout.php?user=mem'>登出</a> |";
                                 } else {
                                         echo "<a href='?do=login'>會員登入</a> |";
                                 }
                                 ?>
+
                                 <?php
-                                if (isset($_SESSION[['Admin']])) {
-                                        echo "<a href='admin.php'>返回管理</a>|";
+                                if (isset($_SESSION['Admin'])) {
+                                        echo "<a href='admin.php'>返回管理</a>";
                                 } else {
-                                        echo "<a href='?do=admin'>管理登入</a> |";
+                                        echo "<a href='?do=admin'>管理登入</a>";
                                 }
                                 ?>
-
-                                <a href="?do=admin">管理登入</a>
                         </div>
                         <marquee>
                                 年終特賣會開跑了 &nbsp; 情人節特惠活動
@@ -67,30 +66,27 @@ include "./api/base.php";
                                         }
                                         echo "</div>";
                                 }
+
                                 ?>
                         </div>
                         <span>
                                 <div>進站總人數</div>
-                                <div style="color:#f00; font-size:28px;">
-                                        00005 </div>
+                                <div style="color:#f00; font-size:28px;"> 00005 </div>
                         </span>
                 </div>
                 <div id="right">
-                        <a href="">全部商品</a>
                         <?php
                         $do = $_GET['do'] ?? 'main';
                         $file = "front/$do.php";
                         if (file_exists($file)) {
                                 include $file;
                         } else {
-                                include "front/main.php";
+                                include 'front/main.php';
                         }
                         ?>
                 </div>
                 <div id="bottom" style="line-height:70px;background:url(icon/bot.png); color:#FFF;" class="ct">
-                        <!-- 從backend/bot.php複製來的 -->
-                        <?= $Bottom->find(1)['bottom'] ?>
-                </div>
+                        <?= $Bottom->find(1)['bottom']; ?></div>
         </div>
 
 </body>

@@ -34,6 +34,7 @@ $mem = $Mem->find(['acc' => $_SESSION['Mem']]);
     </tr>
     <!-- 從buycart.php複製 -->
     <?php
+    $total = 0;
     foreach ($_SESSION['cart'] as $id => $qt) {
         $goods = $Goods->find($id);
     ?>
@@ -61,7 +62,8 @@ $mem = $Mem->find(['acc' => $_SESSION['Mem']]);
             'name': $('#name').val(),
             'email': $('#email').val(),
             'addr': $('#addr').val(),
-            'tel': $('#tel').val()
+            'tel': $('#tel').val(),
+            'total': <?= $total; ?>,
         }
         $.post('./api/checkout.php', data, function(res) {
             if (res == '1') {
