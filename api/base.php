@@ -324,6 +324,6 @@ function captcha($str)
 $Mem = new DB('members');
 $Admin = new DB('admin');
 $Bottom = new DB('bottom');
-$goods = new DB('goods');
+$Goods = new DB('goods');
 $Order = new DB('orders');
 $Type = new DB('types');

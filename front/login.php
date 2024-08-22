@@ -17,15 +17,14 @@
     <tr>
         <td class="tt ct">驗證碼</td>
         <td class="pp">
-            <?php
-            // $a = rand(10, 99);
-            // $b = rand(10, 99);
-            // $_SESSION['answer'] = $a+$b;
-            // echo $a . " + " . $b . " = ";
-            $_SESSION['answer'] = $code(4);
-            echo $_SESSION['answer'] . "=";
+        <?php
+            /* $a = rand(10, 99);
+            $b = rand(10, 99);
+            $_SESSION['ans'] = $a + $b;
+            echo $a . " + " . $b . " = "; */
+            //$_SESSION['ans'] = code(4);
             ?>
-            <img src="?>" alt="" onclick="loadCatpcha()" id="catpcha">
+            <img src="" id='catpcha' alt="" onclick="loadCatpcha()">
             <input type="text" name="ans" id="ans">
         </td>
     </tr>
