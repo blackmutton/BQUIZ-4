@@ -23,9 +23,9 @@
             // $_SESSION['answer'] = $a+$b;
             // echo $a . " + " . $b . " = ";
             $_SESSION['answer'] = $code(4);
-            echo $_SESSION['answer']."=";
+            echo $_SESSION['answer'] . "=";
             ?>
-             <img src="<?= captcha($_SESSION['ans']); ?>" alt="" onclick="location.reload()">
+            <img src="?>" alt="" onclick="loadCatpcha()" id="catpcha">
             <input type="text" name="ans" id="ans">
         </td>
     </tr>
@@ -33,13 +33,21 @@
 <div class="ct"><button onclick="login()">確認</button></div>
 
 <script>
+    loadCatpcha()
+
+    function loadCatpcha() {
+        $.get("./api/get_catpcha.php", (img) => {
+            $("#catpcha").attr("src", img);
+        })
+    }
+
     function login() {
         $.get("./api/chk_ans.php", {
             ans: $("#ans").val()
         }, (chk) => {
             if (parseInt(chk)) {
                 $.get("./api/chk_pw.php", {
-                    table:'Mem',
+                    table: 'Mem',
                     acc: $("#acc").val(),
                     pw: $("#pw").val()
                 }, (chk) => {
