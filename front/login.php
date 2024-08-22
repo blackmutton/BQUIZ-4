@@ -18,11 +18,14 @@
         <td class="tt ct">驗證碼</td>
         <td class="pp">
             <?php
-            $a = rand(10, 99);
-            $b = rand(10, 99);
-            $_SESSION['answer'] = $a + $b;
-            echo $a . " + " . $b . " = ";
+            // $a = rand(10, 99);
+            // $b = rand(10, 99);
+            // $_SESSION['answer'] = $a+$b;
+            // echo $a . " + " . $b . " = ";
+            $_SESSION['answer'] = $code(4);
+            echo $_SESSION['answer']."=";
             ?>
+             <img src="<?= captcha($_SESSION['ans']); ?>" alt="" onclick="location.reload()">
             <input type="text" name="ans" id="ans">
         </td>
     </tr>
